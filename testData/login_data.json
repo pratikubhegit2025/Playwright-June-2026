@@ -1,0 +1,33 @@
+{
+  "valid_login": {
+    "testCase": "Valid login with Registration Desk location",
+    "username": "admin",
+    "password": "Admin123",
+    "location": "Registration Desk"
+  },
+  "invalid_login": [
+    {
+      "testCase": "Invalid password",
+      "username": "admin",
+      "password": "InvalidPassword123",
+      "location": "Registration Desk",
+      "expectedError": "Invalid username/password. Please try again."
+    }
+  ],
+  "validation": [
+    {
+      "testCase": "Blank username",
+      "username": "",
+      "password": "Admin123",
+      "location": "Registration Desk",
+      "expectedError": "Invalid username/password. Please try again."
+    },
+    {
+      "testCase": "Blank password",
+      "username": "admin",
+      "password": "",
+      "location": "Registration Desk",
+      "expectedError": "Invalid username/password. Please try again."
+    }
+  ]
+}

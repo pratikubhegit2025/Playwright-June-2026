@@ -1,0 +1,71 @@
+{
+  "positive": [
+    {
+      "firstName": "Aarav",
+      "middleName": "Kumar",
+      "lastName": "Sharma",
+      "birthDay": "15",
+      "birthMonth": "May",
+      "birthYear": "1994",
+      "address": "12 Residency Road",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "country": "India",
+      "postalCode": "560001",
+      "phone1": "9876543210",
+      "gender": "Male"
+    }
+  ],
+  "boundary": [
+    {
+      "firstName": "Ria",
+      "lastName": "Sen",
+      "estimatedYears": "15",
+      "estimatedMonths": "0",
+      "address": "1 Test Street",
+      "city": "Pune",
+      "country": "India",
+      "phone1": "9000000001",
+      "gender": "Female"
+    },
+    {
+      "firstName": "Neel",
+      "lastName": "Patel",
+      "estimatedYears": "99",
+      "estimatedMonths": "0",
+      "address": "99 Boundary Avenue",
+      "city": "Mumbai",
+      "country": "India",
+      "phone1": "9000000002",
+      "gender": "Male"
+    }
+  ],
+  "negative": [
+    {
+      "firstName": "Aarav123",
+      "lastName": "Sharma",
+      "estimatedYears": "5",
+      "address": "Invalid Test",
+      "city": "Pune",
+      "phone1": "abc123",
+      "gender": "Male",
+      "expectedValidation": "Unsupported by current OpenMRS UI for strict client-side validation coverage",
+      "unsupportedInOpenMrs": true
+    }
+  ],
+  "validation": [
+    {
+      "firstName": "",
+      "lastName": "",
+      "expectedValidation": "Given name and family name are mandatory"
+    },
+    {
+      "firstName": "Meera",
+      "lastName": "Joshi",
+      "phone1": "9999999999",
+      "phone2": "9999999999",
+      "expectedValidation": "Phone numbers must be unique",
+      "unsupportedInOpenMrs": true
+    }
+  ]
+}

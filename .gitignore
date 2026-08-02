@@ -1,0 +1,27 @@
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Environment and local editor files
+.env
+.env.*
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated test artifacts
+allure-results/
+reports/
+.playwright-mcp/
+pom-review-report.md
+test-run-report-*.md
+
+# Local logs
+*.log

@@ -1,0 +1,25 @@
+{
+  "successful_registration": [
+    {
+      "firstName": "Aarav",
+      "middleName": "Kumar",
+      "lastName": "Sharma",
+      "birthDay": "15",
+      "birthMonth": "May",
+      "birthYear": "1994",
+      "address": "12 Residency Road",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "country": "India",
+      "postalCode": "560001",
+      "phone1": "9876543210",
+      "gender": "Male"
+    }
+  ],
+  "validation": [
+    {
+      "testCase": "Mandatory name field validation",
+      "expectedValidation": "Required"
+    }
+  ]
+}
