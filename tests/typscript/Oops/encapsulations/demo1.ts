@@ -11,6 +11,10 @@
 
 // examples of encapsulation in typescript
  
+
+
+
+
 class Student {
     private name: string;
     private age: number;
@@ -19,7 +23,8 @@ class Student {
         this.name = name;
         this.age = age;
     }
-
+// what is mothod in typescript
+// methoid is a function which is defined inside a class and can be called using an object of that class.
     public getName(): string {
         return this.name;
     }
@@ -30,9 +35,9 @@ class Student {
 
 //object of class is created using new keyword
 
-let student1 = new Student('Pratik', 25);
-console.log(student1.getName()); // Output: Pratik
-console.log(student1.getAge()); // Output: 25
+let student2 = new Student('Pratik', 25);
+console.log(student2.getName()); // Output: Pratik
+console.log(student2.getAge()); // Output: 25
 
 
 

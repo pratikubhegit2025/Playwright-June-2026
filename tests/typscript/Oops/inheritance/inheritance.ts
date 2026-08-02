@@ -71,3 +71,42 @@ const puppy = new Puppy();
 puppy.eat();     // From Animal
 puppy.bark();    // From Dog
 puppy.sleep();   // From Puppy
+
+
+// hierarchical inheritance example in typescript
+
+console.log('-------------------hierarchical inheritance example in typescript-------------------');
+
+//animal -
+
+class Animal22 {
+
+    eat() {
+        console.log("Animal is eating");
+    }
+}
+
+class Dog22 extends Animal {
+
+    bark() {
+        console.log("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+
+    meow() {
+        console.log("Cat is meowing");
+    }
+}
+
+const dog = new Dog();
+
+dog.eat();      // Parent method
+dog.bark();     // Dog method
+
+const cat = new Cat();
+
+cat.eat();      // Parent method
+cat.meow();     // Cat method
+

@@ -6,4 +6,6 @@ function passname(callback : Function){
 callback("Pratik");
 }
 
-passname(greet);
+
+
+//call back function is used

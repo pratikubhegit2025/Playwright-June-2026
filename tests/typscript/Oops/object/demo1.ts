@@ -100,3 +100,59 @@ student1.name="Rahul"; // updating the property of object
 console.log(student1); // printing the object after updating property
 delete student1.age; // deleting the property of object
 console.log(student1); // printing the object after deleting property
+
+
+
+
+
+
+
+
+//where we can implement the oops concepts in typescript
+// class - 
+//whaat is class in typescript
+// class is a blueprint for creating objects. It defines the properties and methods that the objects created from the class will have. In TypeScript, classes can have constructors, methods, and access modifiers (public, private, protected) to control access to their members. Classes can also implement interfaces and extend other classes to create a hierarchy of related classes.
+// constructor -
+// what is constructor in typescript
+// constructor is a special method in a class that is used to initialize the object of that class. It is called automatically when an object of the class is created. It can take parameters to initialize the properties of the class.
+// method -
+// what is method in typescript
+// method is a function which is defined inside a class and can be called using an object of that class.
+// property -
+
+//in encapsulation where we can implement the constructor in typescript
+//to initialize the properties of the class we can implement the constructor in typescript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
