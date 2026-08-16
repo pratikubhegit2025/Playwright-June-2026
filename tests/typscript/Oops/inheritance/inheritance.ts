@@ -61,8 +61,8 @@ class Dog extends Animal {
 
 class Puppy extends Dog {
 
-    sleep() {
-        console.log("Puppy is sleeping");
+    sleep() { // intializing the sleep method in Puppy class
+        console.log("Puppy is sleeping"); // IMplementation of the sleep method in Puppy class
     }
 }
 
