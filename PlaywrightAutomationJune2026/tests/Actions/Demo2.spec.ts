@@ -34,14 +34,14 @@ console.log('Title is:', await page.title());
 //RADIO BUTTON
 
 
-const male =page.getByRole('radio',{name:'Male',exact:true});
-//const male = await expect(page.getByRole('radio',{name:'Male',exact:true})).toBeChecked();
-const isSelected = await male.isChecked();
-console.log('Male radio button is selected:', isSelected);
+// const male =page.getByRole('radio',{name:'Male',exact:true});
+// //const male = await expect(page.getByRole('radio',{name:'Male',exact:true})).toBeChecked();
+// const isSelected = await male.isChecked();
+// console.log('Male radio button is selected:', isSelected);
 
-male.check();
-await expect(male).toBeChecked();
-console.log('Male radio button is selected:', await male.isChecked());
+// male.check();
+// await expect(male).toBeChecked();
+// console.log('Male radio button is selected:', await male.isChecked());
 
 //CHECKBOXES
 
@@ -57,14 +57,56 @@ console.log('Male radio button is selected:', await male.isChecked());
 // }
 
 
-const checkboxes =page.locator(`xpath =//input[@id='sunday'] | //input[@id='monday'] | //input[@id='tuesday'] | //input[@id='wednesday'] | //input[@id='thursday'] | //input[@id='friday'] | //input[@id='saturday']`);
-for(let i=0; i<7; i++){
-checkboxes.nth(i).check();
-await expect(checkboxes.nth(i)).toBeChecked();
-console.log('Checkbox ' + (i+1) + ' is selected:', await checkboxes.nth(i).isChecked());
-await page.waitForTimeout(1000);
+// const checkboxes =page.locator(`xpath =//input[@id='sunday'] | //input[@id='monday'] | //input[@id='tuesday'] | //input[@id='wednesday'] | //input[@id='thursday'] | //input[@id='friday'] | //input[@id='saturday']`);
+// for(let i=0; i<7; i++){
+// checkboxes.nth(i).check();
+// await expect(checkboxes.nth(i)).toBeChecked();
+// console.log('Checkbox ' + (i+1) + ' is selected:', await checkboxes.nth(i).isChecked());
+// await page.waitForTimeout(1000);
 
-}
+
+// handle dropdown and select an option
+
+// await page.locator('#country').selectOption('India');
+// await expect(page.locator('#country')).toHaveValue('india');
+
+// console.log('Selected country is:', await page.locator('#country').inputValue());
+
+//To select all values from drop down 
+
+
+// const country =page.locator('#country');
+// const countryValues= ['india', 'usa', 'canada', 'uk', 'germany', 'france', 'japan', 'china', 'brazil', 'australia'];
+
+// for (let i=0;i<countryValues.length;i++){
+//  await country.selectOption(countryValues[i]);
+//  await expect(country).toHaveValue(countryValues[i]);
+//  console.log('Selected country is:', countryValues[i]);
+//  await page.waitForTimeout(1000);
+
+
+
+// const datepicker1=page.locator('input#datepicker');
+// await datepicker1.fill('06/15/2026');
+// await page.waitForTimeout(2000);
+// await expect(datepicker1).toHaveValue('06/15/2026');
+// console.log('Selected date is:', await datepicker1.inputValue());
+
+const datepicker1=page.locator('input#datepicker');
+const calender = page.locator('#ui-datepicker-div');
+await datepicker1.click();
+await calender.locator("td[data-month='8'][data-year='2026'] a[data-date='6']").click();
+await page.waitForTimeout(2000);
+await expect(datepicker1).toHaveValue('09/06/2026');
+console.log('Selected date is:', await datepicker1.inputValue());
+
+
+
+
+
+
+
+
 
 
 

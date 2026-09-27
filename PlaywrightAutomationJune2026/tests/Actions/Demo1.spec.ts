@@ -55,13 +55,21 @@ test('Practice actions and assertions', async ({ page }) => {
   await page.waitForTimeout(actionPause);
   await expect(country).toHaveValue('india');
 
-  // Date Picker 1 uses the mm/dd/yyyy format.
+  // Date Picker 1 is a text-compatible date input. The practice page expects
+  // the displayed US format mm/dd/yyyy, so fill() is enough; no calendar
+  // navigation is required. The assertion verifies the value accepted by
+  // the control, not only that the action completed without an exception.
   const datePicker1 = page.locator('#datepicker');
   await datePicker1.fill('09/05/2026');
   await page.waitForTimeout(actionPause);
   await expect(datePicker1).toHaveValue('09/05/2026');
 
-  // Date Picker 2 uses the dd/mm/yyyy format.
+  // Date Picker 2 is a custom jQuery UI calendar. Clicking the input opens
+  // a separate calendar container. Scope all calendar locators to that
+  // container, choose the year and month explicitly, and then click the day.
+  // Month options are zero-based in this widget: 8 means September. The
+  // other-month filter prevents selecting a duplicate day from an adjacent
+  // month shown in the calendar grid.
   const datePicker2 = page.locator('#txtDate');
   await datePicker2.click();
   const calendar = page.locator('#ui-datepicker-div');
@@ -72,7 +80,10 @@ test('Practice actions and assertions', async ({ page }) => {
   await page.waitForTimeout(actionPause);
   await expect(datePicker2).toHaveValue('05/09/2026');
 
-  // Date Picker 3 uses native date fields. Playwright fills these with ISO dates.
+  // Date Picker 3 uses native <input type="date"> fields. Native date inputs
+  // accept ISO values (yyyy-mm-dd), even when the browser displays a locale-
+  // specific format. This example also checks the application's range result
+  // after both boundaries are entered and the form is submitted.
   const startDate = page.locator('#start-date');
   const endDate = page.locator('#end-date');
   await startDate.fill('2026-09-05');
