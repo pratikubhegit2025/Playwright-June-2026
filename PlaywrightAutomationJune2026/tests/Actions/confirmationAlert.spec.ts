@@ -1,51 +1,24 @@
-import { expect, test, Locator } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
-test('Accep confirmation alert', async ({ page }) => {
+test('Accept confirmation alert', async ({ page }) => {
+  await page.goto('https://testautomationpractice.blogspot.com/');
 
-await page.goto('https://testautomationpractice.blogspot.com/');
+  // Register the handler before clicking because the dialog opens immediately.
+  page.once('dialog', async (dialog) => {
+    console.log('Dialog message:', dialog.message());
 
+    expect(dialog.type()).toBe('confirm');
+    expect(dialog.message()).toBe('Press a button!');
 
-// handling confirmation aler 
-page.once('dialog', async (dialog) => {
- // once = it is handler, it handles alert when occcure
-console.log("Dialog Message: ", dialog.message());
+    // Select OK on the confirmation dialog.
+    await dialog.accept();
+  });
 
-  expect(dialog.type()).toBe('confirm');
-expect(dialog.message()).toBe("Press a button!")
-await page.waitForTimeout(5000);
+  await page.getByRole('button', {
+    name: 'Confirmation Alert',
+    exact: true,
+  }).click();
 
-//await dialog.accept();// clicking on ok button
-
-await dialog.dismiss();// clicking on cancel button
+  // Confirm that selecting OK updated the page result.
+  await expect(page.locator('#demo')).toHaveText('You pressed OK!');
 });
-
-  //Confirmation Alert button 
-  await page.getByRole('button',{name:'Confirmation Alert', exact: true}).click();
-
-await expect(page.getByText('You pressed Cancel!')).toBeVisible();
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//alert
-//confirm
-//prompt 
-
-
-
-
