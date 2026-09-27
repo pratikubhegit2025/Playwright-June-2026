@@ -31,8 +31,15 @@
 
 
 enum urls{
-    facebook = "www.facbook.com",
+    facebook = "www.facbook.com/login",
     gmail= "www.gmail.com"
 }
 
 console.log(urls.gmail);
+
+// git switch branchname
+// git checkout 
+// git add .
+// git commit -m ")2nd August opps and exception handling"
+// git push
+//git push -u origin branch name
